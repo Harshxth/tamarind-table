@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tamarind Table | Hyderabadi Kitchen in Tampa</title>
-  <meta name="description" content="Tamarind Table is a Hyderabadi and South Asian kitchen in Tampa. Browse the menu by category, diet and spice level.">
+  <meta name="description" content="Tamarind Table is a Hyderabadi kitchen in Tampa. Dum biryani, slow curries and tandoor breads. Browse the menu by category, diet and spice level.">
+  <meta name="theme-color" content="#0f100e">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="css/main.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Tamarind Table</a>
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="30" height="30">Tamarind Table</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav id="nav-links" aria-label="Main">
         <ul>
@@ -30,61 +33,74 @@
 
   <main id="main">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Hyderabadi kitchen, Tampa FL</p>
-          <h1>Slow-cooked biryani and South Asian comfort food.</h1>
-          <p class="lead">Tamarind Table cooks the food of Hyderabad the long way: dum biryani sealed for hours, curries built on hand-ground spice, and bread straight from the tandoor. Find a dish that fits your diet and spice comfort in seconds.</p>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1600&q=70"
+             srcset="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=70 800w,
+                     https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1600&q=70 1600w,
+                     https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=2400&q=70 2400w"
+             sizes="100vw" alt="A rich, slow-cooked curry finished with cream" fetchpriority="high">
+      </div>
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">Hyderabadi kitchen in Tampa</p>
+          <h1>Biryani worth the <em>wait.</em></h1>
+          <p class="lead">Dum biryani sealed for three hours, curries on hand-ground spice, and bread straight from the tandoor.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#menu">Explore the menu</a>
-            <a class="btn btn-ghost" href="analytics.html">See what guests order</a>
+            <a class="btn btn-primary" href="#menu">See the menu</a>
+            <a class="btn btn-ghost" href="#visit">Plan a visit</a>
           </div>
         </div>
-        <aside class="card hero-card" aria-labelledby="hours-title">
-          <h2 id="hours-title">Hours</h2>
-          <table class="hours">
-            <tr data-day="1"><td>Monday</td><td>Closed</td></tr>
-            <tr data-day="2"><td>Tuesday</td><td>11:30 AM to 9:30 PM</td></tr>
-            <tr data-day="3"><td>Wednesday</td><td>11:30 AM to 9:30 PM</td></tr>
-            <tr data-day="4"><td>Thursday</td><td>11:30 AM to 9:30 PM</td></tr>
-            <tr data-day="5"><td>Friday</td><td>11:30 AM to 10:30 PM</td></tr>
-            <tr data-day="6"><td>Saturday</td><td>12:00 PM to 10:30 PM</td></tr>
-            <tr data-day="0"><td>Sunday</td><td>12:00 PM to 9:00 PM</td></tr>
-          </table>
-          <p class="muted" style="margin:14px 0 0">Seminole Heights, Tampa, FL</p>
-        </aside>
       </div>
     </section>
 
-    <section class="section" style="padding-top:24px">
-      <div class="wrap stats">
-        <div class="card stat"><b>6</b><span>categories on the menu</span></div>
-        <div class="card stat"><b>3 hrs</b><span>dum cook time per biryani pot</span></div>
-        <div class="card stat"><b>40</b><span>seats, plus takeout</span></div>
-        <div class="card stat"><b>4</b><span>spice levels, labeled on every dish</span></div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:8px">
-      <div class="wrap">
-        <p class="eyebrow">Why guests come back</p>
-        <h2>Built around how people actually order</h2>
-        <div class="features" style="margin-top:24px">
-          <div class="card feature"><div class="icon" aria-hidden="true">1</div><h3>Clear dietary labels</h3><p class="muted">Every dish is tagged vegetarian, vegan or gluten-free, so filtering takes one click instead of a conversation.</p></div>
-          <div class="card feature"><div class="icon" aria-hidden="true">2</div><h3>Honest spice levels</h3><p class="muted">Mild through very hot, so first-time guests and spice lovers both know what they are getting.</p></div>
-          <div class="card feature"><div class="icon" aria-hidden="true">3</div><h3>A live menu</h3><p class="muted">Staff update dishes and prices on the Manage Menu page; this page shows only what the kitchen is serving today.</p></div>
+    <section class="section">
+      <div class="wrap story">
+        <div class="story-media reveal">
+          <img src="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?auto=format&fit=crop&w=1000&h=1250&q=70"
+               srcset="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?auto=format&fit=crop&w=600&h=750&q=70 600w,
+                       https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?auto=format&fit=crop&w=1000&h=1250&q=70 1000w"
+               sizes="(max-width: 900px) 100vw, 50vw" alt="Whole spices on a dark table: star anise, cinnamon, chili and turmeric" loading="lazy" width="1000" height="1250">
+        </div>
+        <div class="reveal">
+          <h2>Cooked the <em>long</em> way</h2>
+          <p class="lead">We toast and grind our spice blends every morning. Biryani goes into a sealed pot over low heat, the way it is done in Hyderabad, so the rice steams in the juices of the meat.</p>
+          <p class="muted">Every dish is labeled for diet and heat, so first-timers and regulars both know what they are ordering.</p>
+          <div class="facts">
+            <div><b>3 hrs</b><span>dum cook time for every biryani pot</span></div>
+            <div><b>4</b><span>spice levels, marked on each dish</span></div>
+            <div><b>40</b><span>seats in the dining room, plus takeout</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="menu" style="padding-top:16px">
+    <section class="section" style="padding-top:0">
       <div class="wrap">
-        <p class="eyebrow">Menu</p>
-        <h2>Find your dish</h2>
+        <h2 class="reveal">The dishes people drive for</h2>
+        <div class="bento">
+          <figure class="big reveal">
+            <div class="shot"><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1200&h=1300&q=70" alt="Chicken dum biryani in a white bowl" loading="lazy"></div>
+            <figcaption><div><h3>Chicken Dum Biryani</h3><p>Saffron basmati, bone-in chicken, mirchi ka salan</p></div><span class="price" data-dish-price="10"></span></figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="shot"><img src="https://images.unsplash.com/photo-1772730064951-89b427965dbc?auto=format&fit=crop&w=900&h=560&q=70" alt="Butter chicken in a creamy tomato sauce with mint" loading="lazy"></div>
+            <figcaption><div><h3>Butter Chicken</h3><p>Smoked tandoori chicken, tomato and butter</p></div><span class="price" data-dish-price="5"></span></figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="shot"><img src="https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=900&h=560&q=70" alt="Crisp red fried chicken with curry leaves" loading="lazy"></div>
+            <figcaption><div><h3>Chicken 65</h3><p>Hyderabadi fried chicken, curry leaf, red chili</p></div><span class="price" data-dish-price="3"></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu" style="padding-top:0">
+      <div class="wrap">
+        <h2>The menu</h2>
         <div class="toolbar">
           <div class="grow">
-            <label for="menu-search">Search</label>
-            <input type="search" id="menu-search" placeholder="Try &quot;biryani&quot; or &quot;paneer&quot;">
+            <label for="menu-search">Search dishes</label>
+            <input type="search" id="menu-search" placeholder="Try biryani or paneer">
           </div>
           <div>
             <label for="diet-filter">Diet</label>
@@ -97,15 +113,37 @@
           </div>
         </div>
         <div class="chips" id="category-chips" role="group" aria-label="Filter by category"></div>
-        <p class="muted" id="menu-count" aria-live="polite" style="margin:16px 0 12px"></p>
-        <div class="menu-grid" id="menu-grid"></div>
+        <p class="muted" id="menu-count" aria-live="polite" style="margin:18px 0 0;font-size:.92rem"></p>
+        <div id="menu-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="visit" style="padding-top:24px">
+      <div class="wrap visit">
+        <div class="reveal">
+          <p class="eyebrow">Visit</p>
+          <h2>Dinner tonight?</h2>
+          <table class="hours">
+            <tr data-day="1"><td>Monday</td><td>Closed</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>11:30 AM to 10:30 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>12:00 PM to 10:30 PM</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>12:00 PM to 9:00 PM</td></tr>
+          </table>
+          <address class="address"><b>Seminole Heights, Tampa, FL</b>Walk-ins welcome. Groups of 6 or more, call ahead.</address>
+        </div>
+        <div class="visit-media reveal">
+          <img src="https://images.unsplash.com/photo-1709548145082-04d0cde481d4?auto=format&fit=crop&w=1100&h=900&q=70" alt="A dimly lit dining room with set tables" loading="lazy">
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>Tamarind Table is a fictional restaurant created for ISM 6225 Assignment 1. All data is sample data.</span>
+      <span>Tamarind Table is a fictional restaurant created for ISM 6225 Assignment 1. All data is sample data. Photos from <a href="https://unsplash.com" rel="noopener">Unsplash</a>.</span>
       <span>Built by <a href="aboutus.html">Harshith Gujjeti</a></span>
     </div>
   </footer>

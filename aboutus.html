@@ -8,14 +8,16 @@
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#0f100e">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Tamarind Table</a>
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="30" height="30">Tamarind Table</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <nav id="nav-links" aria-label="Main">
         <ul>
@@ -61,7 +63,7 @@
             <li><b>Built the layout in plain HTML and CSS.</b> One shared stylesheet with CSS variables for color, type and spacing keeps all four pages consistent, and CSS Grid with two breakpoints makes them work from phone to desktop.</li>
             <li><b>Added JavaScript where it helps the user.</b> The home page filters the menu by category, diet and search. The Manage Menu page mocks Create, Read, Update and Delete with form validation, and saves changes in localStorage so they carry over to the other pages.</li>
             <li><b>Visualized the data with Chart.js.</b> The Analytics page shows revenue trend, sales by category, best sellers and busiest days. Two of the charts are computed from the live menu, so editing a dish updates them.</li>
-            <li><b>Tuned for speed and access.</b> No CSS framework, scripts deferred, Chart.js loaded only on the page that needs it, the logo is a sub-1 KB SVG, and all of the site's own HTML, CSS and JavaScript adds up to about 50 KB. Every page has a skip link, labeled form fields and visible keyboard focus.</li>
+            <li><b>Tuned for speed and access.</b> No CSS framework, scripts deferred, Chart.js loaded only on the page that needs it, the logo is a sub-1 KB SVG, and all of the site's own HTML, CSS and JavaScript adds up to about 60 KB. Every page has a skip link, labeled form fields and visible keyboard focus.</li>
           </ol>
           <p>The hardest part was keeping the CRUD form simple while still catching mistakes: it rejects empty names, out-of-range prices and duplicate dishes, and escapes text before showing it so typed input can never inject HTML.</p>
 
@@ -71,7 +73,8 @@
             <li class="card"><b>CSS3</b><span>Custom properties, Grid, Flexbox, media queries</span></li>
             <li class="card"><b>JavaScript (ES6)</b><span>Filtering, mock CRUD, localStorage</span></li>
             <li class="card"><b>Chart.js 4</b><span>Line, doughnut and bar charts</span></li>
-            <li class="card"><b>Google Fonts</b><span>Fraunces and Inter</span></li>
+            <li class="card"><b>Google Fonts</b><span>Cormorant Garamond and Outfit</span></li>
+            <li class="card"><b>Unsplash</b><span>Food and dining room photography</span></li>
             <li class="card"><b>GitHub Pages</b><span>Hosting and source control</span></li>
           </ul>
         </div>

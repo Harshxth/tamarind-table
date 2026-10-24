@@ -11,4 +11,4 @@ A static, data-driven website for a fictional Hyderabadi restaurant in Tampa. Bu
 | `analytics.html` | Chart.js dashboard: revenue trend, sales by category, top dishes, guests by day |
 | `aboutus.html` | About the developer and how the site was built |
 
-Plain HTML, CSS and JavaScript, no build step. About 50 KB of site code; Chart.js loads only on the analytics page. All data is sample data.
+Plain HTML, CSS and JavaScript, no build step. About 60 KB of site code; Chart.js loads only on the analytics page. All data is sample data.

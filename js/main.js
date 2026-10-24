@@ -1,12 +1,13 @@
 // Shared by every page: menu data store, helpers, mobile nav, and the home page menu explorer.
 
+// Category colors are used by the analytics charts (tuned for the dark theme).
 const CATEGORIES = {
-  Starters: '#e9a83b',
-  Mains: '#b4441b',
-  Biryani: '#7a4a2a',
-  Breads: '#c99a5b',
-  Desserts: '#c2577a',
-  Drinks: '#3f7d4e'
+  Starters: '#e3a540',
+  Mains: '#d4683f',
+  Biryani: '#f2d29b',
+  Breads: '#8f7a5a',
+  Desserts: '#c97b8c',
+  Drinks: '#8fb37f'
 };
 const SPICE = ['Mild', 'Medium', 'Hot', 'Very hot'];
 
@@ -79,6 +80,27 @@ if (navToggle) {
 const hoursRow = document.querySelector(`.hours tr[data-day="${new Date().getDay()}"]`);
 if (hoursRow) hoursRow.classList.add('today');
 
+// Scroll reveal: fade sections in once as they enter the viewport
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -10% 0px' });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+// Signature dish prices come from the live menu, so edits on Manage Menu show here too
+const priceEls = document.querySelectorAll('[data-dish-price]');
+if (priceEls.length) {
+  const byId = Object.fromEntries(MenuStore.load().map(it => [it.id, it]));
+  priceEls.forEach(el => {
+    const it = byId[el.dataset.dishPrice];
+    el.textContent = it ? money(it.price) : '';
+  });
+}
+
 // Home page: menu explorer (filter by category, diet, and search)
 const grid = document.getElementById('menu-grid');
 if (grid) {
@@ -102,13 +124,22 @@ if (grid) {
       (!q || (item.name + ' ' + item.description).toLowerCase().includes(q))
     );
     countEl.textContent = `${shown.length} dish${shown.length === 1 ? '' : 'es'}`;
-    grid.innerHTML = shown.length
-      ? shown.map(item => `
-        <article class="card dish" style="--cat:${CATEGORIES[item.category] || 'var(--accent)'}">
-          <div class="dish-head"><h3>${esc(item.name)}</h3><span class="price">${money(item.price)}</span></div>
-          <p>${esc(item.description)}</p>
-          <div class="tags"><span class="tag">${esc(item.category)}</span>${dietTags(item)}</div>
-        </article>`).join('')
+    // Group by category, in menu order, like a printed menu
+    const groups = Object.keys(CATEGORIES)
+      .map(cat => [cat, shown.filter(item => item.category === cat)])
+      .filter(([, list]) => list.length);
+    grid.innerHTML = groups.length
+      ? groups.map(([cat, list]) => `
+        <div class="menu-group">
+          <h3>${esc(cat)}</h3>
+          <div class="menu-list">${list.map(item => `
+            <article class="menu-item">
+              <div class="mi-head"><h4>${esc(item.name)}</h4><span class="leader" aria-hidden="true"></span><span class="price">${money(item.price)}</span></div>
+              <p>${esc(item.description)}</p>
+              <div class="tags">${dietTags(item)}</div>
+            </article>`).join('')}
+          </div>
+        </div>`).join('')
       : '<p class="empty">No dishes match those filters. Try clearing the search.</p>';
   }
 

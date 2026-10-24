@@ -13,8 +13,9 @@ document.getElementById('kpi-revenue').textContent = usd(menu.reduce((s, it) => 
 document.getElementById('kpi-top').textContent = best ? best.name : '-';
 
 Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
-Chart.defaults.color = '#6e5f53';
-Chart.defaults.borderColor = '#eadfd2';
+Chart.defaults.color = '#a6a39a';
+Chart.defaults.borderColor = 'rgba(238,236,230,.08)';
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
 Chart.defaults.maintainAspectRatio = false;
 
 // 1. Monthly revenue (static sample data)
@@ -23,8 +24,8 @@ new Chart(document.getElementById('chart-revenue'), {
   data: {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
     datasets: [
-      { label: 'Dine-in', data: [48200, 46900, 53400, 55100, 57800, 54200, 51600, 52900, 56300], borderColor: '#b4441b', backgroundColor: 'rgba(180,68,27,.12)', fill: true, tension: .35 },
-      { label: 'Takeout', data: [21400, 22800, 23100, 24900, 26400, 28800, 30100, 29400, 31200], borderColor: '#e9a83b', backgroundColor: 'rgba(233,168,59,.12)', fill: true, tension: .35 }
+      { label: 'Dine-in', data: [48200, 46900, 53400, 55100, 57800, 54200, 51600, 52900, 56300], borderColor: '#e3a540', backgroundColor: 'rgba(227,165,64,.14)', fill: true, tension: .35 },
+      { label: 'Takeout', data: [21400, 22800, 23100, 24900, 26400, 28800, 30100, 29400, 31200], borderColor: '#8fb37f', backgroundColor: 'rgba(143,179,127,.08)', fill: true, tension: .35 }
     ]
   },
   options: {
@@ -40,7 +41,7 @@ new Chart(document.getElementById('chart-category'), {
   type: 'doughnut',
   data: {
     labels: cats,
-    datasets: [{ data: cats.map(c => menu.filter(it => it.category === c).reduce((s, it) => s + sales(it), 0)), backgroundColor: cats.map(c => CATEGORIES[c]), borderColor: '#fff', borderWidth: 2 }]
+    datasets: [{ data: cats.map(c => menu.filter(it => it.category === c).reduce((s, it) => s + sales(it), 0)), backgroundColor: cats.map(c => CATEGORIES[c]), borderColor: '#171815', borderWidth: 3 }]
   },
   options: {
     cutout: '58%',
@@ -62,9 +63,9 @@ new Chart(document.getElementById('chart-top'), {
       const cut = name.lastIndexOf(' ', 14);
       return name.length > 14 && cut > 0 ? [name.slice(0, cut), name.slice(cut + 1)] : name;
     }),
-    datasets: [{ label: 'Portions', data: topDishes.map(it => it.orders), backgroundColor: topDishes.map(it => CATEGORIES[it.category] || '#b4441b'), borderRadius: 6 }]
+    datasets: [{ label: 'Portions', data: topDishes.map(it => it.orders), backgroundColor: topDishes.map(it => CATEGORIES[it.category] || '#e3a540'), borderRadius: 6 }]
   },
-  options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { y: { grid: { display: false } } } }
+  options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { y: { grid: { display: false }, ticks: { autoSkip: false } } } }
 });
 
 // 4. Average covers by weekday (static sample data)
@@ -73,8 +74,8 @@ new Chart(document.getElementById('chart-days'), {
   data: {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
-      { label: 'Lunch', data: [0, 38, 41, 44, 52, 71, 78], backgroundColor: '#e9a83b', borderRadius: 6 },
-      { label: 'Dinner', data: [0, 64, 69, 81, 118, 132, 96], backgroundColor: '#b4441b', borderRadius: 6 }
+      { label: 'Lunch', data: [0, 38, 41, 44, 52, 71, 78], backgroundColor: '#8f7a5a', borderRadius: 6 },
+      { label: 'Dinner', data: [0, 64, 69, 81, 118, 132, 96], backgroundColor: '#e3a540', borderRadius: 6 }
     ]
   },
   options: { scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true } } }
