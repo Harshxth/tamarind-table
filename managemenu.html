@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Menu | Tamarind Table</title>
+  <meta name="description" content="Add, view, update and remove Tamarind Table menu items.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Tamarind Table</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav id="nav-links" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="managemenu.html" aria-current="page">Manage Menu</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <p class="eyebrow">Staff tools</p>
+      <h1>Manage the menu</h1>
+      <p class="lead">Add a new dish, edit prices and descriptions, mark items as sold out, or remove them. Changes are saved in your browser and show up right away on the Home and Analytics pages.</p>
+    </div>
+
+    <section class="section" style="padding-top:24px">
+      <div class="wrap crud">
+        <form class="card panel" id="item-form" novalidate>
+          <h2 id="form-title" style="font-size:1.35rem">Add a dish</h2>
+          <input type="hidden" id="item-id">
+          <div class="form-row">
+            <label for="item-name">Dish name</label>
+            <input type="text" id="item-name" required maxlength="60" autocomplete="off">
+          </div>
+          <div class="form-2 form-row">
+            <div>
+              <label for="item-category">Category</label>
+              <select id="item-category" required></select>
+            </div>
+            <div>
+              <label for="item-price">Price (USD)</label>
+              <input type="number" id="item-price" required min="0.5" max="500" step="0.5">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="item-desc">Description</label>
+            <textarea id="item-desc" maxlength="160"></textarea>
+          </div>
+          <div class="form-2 form-row">
+            <div>
+              <label for="item-spice">Spice level</label>
+              <select id="item-spice"></select>
+            </div>
+            <div>
+              <label for="item-available">Status</label>
+              <select id="item-available">
+                <option value="true">Available</option>
+                <option value="false">Sold out</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="form-row" style="border:0;padding:0;margin:0 0 14px">
+            <legend style="font-weight:600;font-size:.9rem;margin-bottom:6px">Dietary</legend>
+            <div class="checks">
+              <label><input type="checkbox" id="item-veg"> Vegetarian</label>
+              <label><input type="checkbox" id="item-vegan"> Vegan</label>
+              <label><input type="checkbox" id="item-gf"> Gluten-free</label>
+            </div>
+          </fieldset>
+          <p class="toast" id="toast" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" id="submit-btn">Add dish</button>
+            <button class="btn btn-ghost" type="button" id="cancel-btn" hidden>Cancel edit</button>
+          </div>
+        </form>
+
+        <div class="card panel">
+          <div class="toolbar" style="margin-top:0">
+            <div class="grow">
+              <label for="table-search">Search dishes</label>
+              <input type="search" id="table-search" placeholder="Name or description">
+            </div>
+            <div>
+              <label for="table-category">Category</label>
+              <select id="table-category"><option value="">All</option></select>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="data">
+              <caption class="muted" id="table-count" style="text-align:left;caption-side:top;padding-bottom:8px"></caption>
+              <thead>
+                <tr><th scope="col">Dish</th><th scope="col">Category</th><th scope="col" class="num">Price</th><th scope="col">Status</th><th scope="col" class="num">Actions</th></tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-ghost btn-sm" type="button" id="reset-btn">Reset to sample menu</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Tamarind Table is a fictional restaurant created for ISM 6225 Assignment 1. All data is sample data.</span>
+      <span>Built by <a href="aboutus.html">Harshith Gujjeti</a></span>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/manage.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tamarind Table | Hyderabadi Kitchen in Tampa</title>
+  <meta name="description" content="Tamarind Table is a Hyderabadi and South Asian kitchen in Tampa. Browse the menu by category, diet and spice level.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Tamarind Table</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav id="nav-links" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="managemenu.html">Manage Menu</a></li>
+          <li><a href="analytics.html">Analytics</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Hyderabadi kitchen, Tampa FL</p>
+          <h1>Slow-cooked biryani and South Asian comfort food.</h1>
+          <p class="lead">Tamarind Table cooks the food of Hyderabad the long way: dum biryani sealed for hours, curries built on hand-ground spice, and bread straight from the tandoor. Find a dish that fits your diet and spice comfort in seconds.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#menu">Explore the menu</a>
+            <a class="btn btn-ghost" href="analytics.html">See what guests order</a>
+          </div>
+        </div>
+        <aside class="card hero-card" aria-labelledby="hours-title">
+          <h2 id="hours-title">Hours</h2>
+          <table class="hours">
+            <tr data-day="1"><td>Monday</td><td>Closed</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>11:30 AM to 9:30 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>11:30 AM to 10:30 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>12:00 PM to 10:30 PM</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>12:00 PM to 9:00 PM</td></tr>
+          </table>
+          <p class="muted" style="margin:14px 0 0">Seminole Heights, Tampa, FL</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="wrap stats">
+        <div class="card stat"><b>6</b><span>categories on the menu</span></div>
+        <div class="card stat"><b>3 hrs</b><span>dum cook time per biryani pot</span></div>
+        <div class="card stat"><b>40</b><span>seats, plus takeout</span></div>
+        <div class="card stat"><b>4</b><span>spice levels, labeled on every dish</span></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px">
+      <div class="wrap">
+        <p class="eyebrow">Why guests come back</p>
+        <h2>Built around how people actually order</h2>
+        <div class="features" style="margin-top:24px">
+          <div class="card feature"><div class="icon" aria-hidden="true">1</div><h3>Clear dietary labels</h3><p class="muted">Every dish is tagged vegetarian, vegan or gluten-free, so filtering takes one click instead of a conversation.</p></div>
+          <div class="card feature"><div class="icon" aria-hidden="true">2</div><h3>Honest spice levels</h3><p class="muted">Mild through very hot, so first-time guests and spice lovers both know what they are getting.</p></div>
+          <div class="card feature"><div class="icon" aria-hidden="true">3</div><h3>A live menu</h3><p class="muted">Staff update dishes and prices on the Manage Menu page; this page shows only what the kitchen is serving today.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu" style="padding-top:16px">
+      <div class="wrap">
+        <p class="eyebrow">Menu</p>
+        <h2>Find your dish</h2>
+        <div class="toolbar">
+          <div class="grow">
+            <label for="menu-search">Search</label>
+            <input type="search" id="menu-search" placeholder="Try &quot;biryani&quot; or &quot;paneer&quot;">
+          </div>
+          <div>
+            <label for="diet-filter">Diet</label>
+            <select id="diet-filter">
+              <option value="">Any</option>
+              <option value="veg">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gf">Gluten-free</option>
+            </select>
+          </div>
+        </div>
+        <div class="chips" id="category-chips" role="group" aria-label="Filter by category"></div>
+        <p class="muted" id="menu-count" aria-live="polite" style="margin:16px 0 12px"></p>
+        <div class="menu-grid" id="menu-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Tamarind Table is a fictional restaurant created for ISM 6225 Assignment 1. All data is sample data.</span>
+      <span>Built by <a href="aboutus.html">Harshith Gujjeti</a></span>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

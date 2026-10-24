@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics | Tamarind Table</title>
+  <meta name="description" content="Sales, best sellers and busiest days at Tamarind Table, visualized with Chart.js.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Tamarind Table</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <nav id="nav-links" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="managemenu.html">Manage Menu</a></li>
+          <li><a href="analytics.html" aria-current="page">Analytics</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <p class="eyebrow">Analytics</p>
+      <h1>What guests order, and when</h1>
+      <p class="lead">A quick read on sales for menu and staffing decisions. The menu charts use the live menu from the Manage Menu page, so editing a price there changes the numbers here.</p>
+    </div>
+
+    <section class="section" style="padding-top:24px">
+      <div class="wrap">
+        <div class="kpis">
+          <div class="card stat"><b id="kpi-items">-</b><span>dishes available now</span></div>
+          <div class="card stat"><b id="kpi-avg">-</b><span>average dish price</span></div>
+          <div class="card stat"><b id="kpi-revenue">-</b><span>menu sales last month</span></div>
+          <div class="card stat"><b id="kpi-top" style="font-size:1.25rem;line-height:1.3">-</b><span>best seller</span></div>
+        </div>
+
+        <div class="charts">
+          <figure class="card chart-card" style="margin:0">
+            <h3>Monthly revenue, 2026</h3>
+            <p class="muted">Dine-in vs takeout, USD</p>
+            <div class="chart-box"><canvas id="chart-revenue" role="img" aria-label="Line chart of monthly dine-in and takeout revenue from January to September 2026"></canvas></div>
+          </figure>
+          <figure class="card chart-card" style="margin:0">
+            <h3>Sales by category</h3>
+            <p class="muted">Last month, price x portions sold</p>
+            <div class="chart-box"><canvas id="chart-category" role="img" aria-label="Doughnut chart of last month's sales by menu category"></canvas></div>
+          </figure>
+          <figure class="card chart-card" style="margin:0">
+            <h3>Top 8 dishes</h3>
+            <p class="muted">Portions sold last month</p>
+            <div class="chart-box"><canvas id="chart-top" role="img" aria-label="Bar chart of the eight best selling dishes by portions sold"></canvas></div>
+          </figure>
+          <figure class="card chart-card" style="margin:0">
+            <h3>Average guests by day</h3>
+            <p class="muted">Covers per day, last 8 weeks (closed Mondays)</p>
+            <div class="chart-box"><canvas id="chart-days" role="img" aria-label="Bar chart of average guests per day of the week"></canvas></div>
+          </figure>
+        </div>
+        <p class="note">Sample data for a fictional restaurant. Charts built with <a href="https://www.chartjs.org/" rel="noopener">Chart.js</a> 4.4.1.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Tamarind Table is a fictional restaurant created for ISM 6225 Assignment 1. All data is sample data.</span>
+      <span>Built by <a href="aboutus.html">Harshith Gujjeti</a></span>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+</body>
+</html>
